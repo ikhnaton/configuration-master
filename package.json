@@ -1,0 +1,18 @@
+{
+  "name": "configuration-master",
+  "version": "0.0.1",
+  "description": "Simple configuration load/access tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikhnaton/configuration-master.git"
+  },
+  "author": "ikhnaton <ikhnaton@techie.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
