@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 // private variables
 const myConfig = {};
-const COMMON_KEY = "Unique key not likely used by any other configurations";
+const COMMON_KEY = "__COMMON";
 const myMap = {
 	"process.stdout": process.stdout,
 	"process.stderr": process.stderr
@@ -38,21 +38,23 @@ function _mapper(value)
 	return retVal
 }
 
-class config
+function config()
 {
-	loadConfig(filename, namespace)
+	this.direct = myConfig;
+
+	this.loadConfig = function(filename, namespace)
 	{
 		let tmp = require(filename);
 		this.setConfig(tmp, namespace);
 	}
 
-	setConfig(jsonObject, namespace)
+	this.setConfig = function(jsonObject, namespace)
 	{
 		jsonObject = _processConfig(jsonObject);
 		myConfig[namespace || COMMON_KEY] = _.merge(myConfig[namespace || COMMON_KEY] || {}, jsonObject);
 	}
 
-	getValue(key, namespace)
+	this.getValue = function(key, namespace)
 	{
 
 		return (myConfig[namespace || COMMON_KEY] == null)?null:myConfig[namespace || COMMON_KEY][key];
