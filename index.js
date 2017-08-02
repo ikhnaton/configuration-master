@@ -59,6 +59,11 @@ function config()
 
 		return (myConfig[namespace || COMMON_KEY] == null)?null:myConfig[namespace || COMMON_KEY][key];
 	}
+
+	this.setValue = function(key, value, namespace)
+	{
+		myConfig[namespace || COMMON_KEY] = value;
+	}
 }
 
 module.exports = new config();
