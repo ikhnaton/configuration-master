@@ -1,6 +1,6 @@
 {
   "name": "configuration-master",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Simple configuration load/access tool.",
   "main": "index.js",
   "scripts": {

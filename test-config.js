@@ -25,5 +25,5 @@ console.log(configMgr.getValue("fire", "namespace"));
 console.log(configMgr.getValue("earth", "namespace"));
 console.log(configMgr.getValue("gold"));
 
-console.log(configMgr.direct.namespace.fire);
+console.log(configMgr.namespace.fire);
 require('./test2Config');

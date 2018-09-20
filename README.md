@@ -2,6 +2,11 @@
 
 This is a simple utility to manage configuration information within your Node.js applications.
 
+#### Release Notes
+v0.1.0
+- breaks .direct. functionality from earlier versions.
+- can now access properties directly.
+
 #### Installation
 
 `npm install configuration-master`
@@ -41,15 +46,15 @@ This is a simple utility to manage configuration information within your Node.js
 >
 >**get value from config**
 >```js
->config.getValue("settingsA");  //returns 'value A'
+>config.getValue("settingA");  //returns 'value A'
 >```
 >or
 >
 >```js
->config.getValue('settingsA', 'namespace');  //returns 'value A'
+>config.getValue('settingA', 'namespace');  //returns 'value A'
 >```
 >or
 >
 >```js
->config.direct.namespace.settingsA  //returns 'value A'
+>config.namespace.settingsA  //returns 'value A'
 >```
