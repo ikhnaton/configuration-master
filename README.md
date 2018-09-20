@@ -7,6 +7,9 @@ v0.1.0
 - breaks .direct. functionality from earlier versions.
 - can now access properties directly.
 
+v0.1.1
+- add tests
+
 #### Installation
 
 `npm install configuration-master`
