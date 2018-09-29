@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const path = require('path');
 
 
 class Config
@@ -70,7 +71,8 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			let tmp = require(filename);
+			const fpath = path.resolve(path.dirname(require.main.filename), filename);
+			const tmp = require(fpath);
 			this.setConfig(tmp, namespace);
 		}
 	}
