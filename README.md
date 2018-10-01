@@ -3,12 +3,18 @@
 This is a simple utility to manage configuration information within your Node.js applications.
 
 #### Release Notes
-v0.1.0
-- breaks .direct. functionality from earlier versions.
-- can now access properties directly.
+v0.1.3
+- add additional tests
+
+v0.1.2
+- change loader to use path.resolve and require.main.filename
 
 v0.1.1
 - add tests
+
+v0.1.0
+- breaks .direct. functionality from earlier versions.
+- can now access properties directly.
 
 #### Installation
 

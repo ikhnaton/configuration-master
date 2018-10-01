@@ -7,7 +7,17 @@ describe('prep.js - test request object preparation', () =>
 		let test = {
 			water: "wet",
 			fire: "hot",
-			earth: "solid"
+			earth: "solid",
+			nested: {
+				sub1: {
+					suba: "something",
+					subb: "deep"
+				},
+				sub2: {
+					dive: "down",
+					water: "wetter"
+				}
+			}
 		};
 		
 		let test2 = {
@@ -54,7 +64,24 @@ describe('prep.js - test request object preparation', () =>
 		expect(config.gold).toBe("expensive");
 		expect(config.namespace.fire).toBe("hot");
 	});
-    
+	
+	it('Test that nested objects work', () => 
+	{
+		expect.assertions(4);
+		expect(config.namespace).not.toBeNull();
+		expect(config.namespace.nested).not.toBeNull();
+		expect(config.namespace.nested.sub2).not.toBeNull();
+		expect(config.namespace.nested.sub2.water).toBe("wetter");
+	});
+
+	it('Test that values can be set', () =>
+	{
+		expect.assertions(2);
+		config.setValue("other", 27);
+		config.setValue("otherValue", 36, "namespace");
+		expect(config.other).toBe(27);
+		expect(config.namespace.otherValue).toBe(36);
+	});
 });
 
 
