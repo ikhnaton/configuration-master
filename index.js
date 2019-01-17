@@ -13,6 +13,7 @@ class Config
 			"process.stderr": process.stderr
 		}
 		const _myConfig = {};
+		_myConfig[COMMON_KEY] = {};
 
 		const _processConfig = (data) =>
 		{
