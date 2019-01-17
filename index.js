@@ -72,7 +72,7 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			const fpath = path.join(path.dirname(require.main.filename), filename);
+			const fpath = filename;
 			if (__non_webpack_require__)
 			{
 				const tmp = __non_webpack_require__(fpath);
