@@ -72,7 +72,7 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			const fpath = path.resolve(path.dirname(require.main.filename), filename);
+			const fpath = path.join(path.dirname(require.main.filename), filename);
 			const tmp = require(fpath);
 			this.setConfig(tmp, namespace);
 		}
