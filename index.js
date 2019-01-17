@@ -92,3 +92,4 @@ const config = new Proxy(tmp, {
 });
 
 module.exports = config;
+module.exports.config = config;
