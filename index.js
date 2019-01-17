@@ -72,10 +72,16 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			// const fpath = path.join(path.dirname(require.main.filename), filename);
-			const fpath = filename;
-			const tmp = require(fpath);
-			this.setConfig(tmp, namespace);
+			const fpath = path.join(path.dirname(require.main.filename), filename);
+			if (__non_webpack_require__)
+			{
+				const tmp = __non_webpack_require__(fpath);
+				this.setConfig(tmp, namespace);
+			}
+			else {
+				const tmp = require(fpath);
+				this.setConfig(tmp, namespace);
+			}
 		}
 	}
 
