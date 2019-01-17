@@ -47,7 +47,6 @@ class Config
 
 		this.setConfig = function(jsonObject, namespace)
 		{
-			console.log(jsonObject);
 			jsonObject = _processConfig(jsonObject);
 			_myConfig[namespace || COMMON_KEY] = _.merge(_myConfig[namespace || COMMON_KEY] || {}, jsonObject);
 		}
@@ -73,14 +72,13 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			const fpath = filename;
 			if (__non_webpack_require__)
 			{
-				const tmp = __non_webpack_require__(fpath);
+				const tmp = __non_webpack_require__(filename);
 				this.setConfig(tmp, namespace);
 			}
 			else {
-				const tmp = require(fpath);
+				const tmp = require(filename);
 				this.setConfig(tmp, namespace);
 			}
 		}
@@ -101,4 +99,3 @@ const config = new Proxy(tmp, {
 });
 
 module.exports = config;
-module.exports.config = config;
