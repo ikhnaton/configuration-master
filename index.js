@@ -47,6 +47,7 @@ class Config
 
 		this.setConfig = function(jsonObject, namespace)
 		{
+			console.log(jsonObject);
 			jsonObject = _processConfig(jsonObject);
 			_myConfig[namespace || COMMON_KEY] = _.merge(_myConfig[namespace || COMMON_KEY] || {}, jsonObject);
 		}
