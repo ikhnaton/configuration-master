@@ -3,6 +3,9 @@
 This is a simple utility to manage configuration information within your Node.js applications.
 
 #### Release Notes
+v0.1.5
+- prevent Reference error if not using Webpack
+
 v0.1.4
 - adjust method for loading configs.  it is now the responsibility of the caller to provide the correct path.
 

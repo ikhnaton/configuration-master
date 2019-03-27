@@ -72,7 +72,7 @@ class Config
 
 		this.loadConfig = (filename, namespace) =>
 		{
-			if (__non_webpack_require__)
+			if (typeof __non_webpack_require__ !== 'undefined')
 			{
 				const tmp = __non_webpack_require__(filename);
 				this.setConfig(tmp, namespace);
