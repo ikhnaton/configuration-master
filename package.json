@@ -1,6 +1,6 @@
 {
   "name": "configuration-master",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Simple configuration load/access tool.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.5.0"
   },
   "jest": {
     "collectCoverage": true,

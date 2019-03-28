@@ -3,6 +3,9 @@
 This is a simple utility to manage configuration information within your Node.js applications.
 
 #### Release Notes
+v0.1.6
+- add ability to use environment variables and then hardcoded value if environment variable missing
+
 v0.1.5
 - prevent Reference error if not using Webpack
 

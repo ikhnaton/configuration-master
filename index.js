@@ -24,9 +24,16 @@ class Config
 				}
 				else if(_.isString(value))
 				{
-					if ((value.substring(0,2) == "${") && (value.substring(value.length-1) == "}"))
+					const closeCurly = value.indexOf('}');
+					const orValue = value.indexOf('||');
+					if ((value.substring(0,2) == "${") && (closeCurly > 2))
 					{
-						collection[key] = _mapper(value.substring(2, value.length-1));
+						collection[key] = _mapper(value.substring(2, closeCurly));
+
+						if (((collection[key] == null) || (collection[key] == "")) && (orValue > 0))
+						{
+							collection[key] = value.substring(orValue + 2).trim();
+						}
 					}
 				}
 			});
